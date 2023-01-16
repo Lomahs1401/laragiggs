@@ -20,20 +20,8 @@ use PhpParser\Node\Expr\List_;
 // All listings
 Route::get('/', [ListingController::class, 'index']);
 
+// Show Create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
 // Single Listings
 Route::get('/listings/{id}', [ListingController::class, 'show']);
-
-Route::get('/hello', function () {
-    return response('<h1>Hello World!</h1>', 200)
-        ->header('Content-Type', 'text/plain')
-        ->header('foo', 'bar');
-});
-
-Route::get('/posts/{id}', function ($id) {
-    ddd($id);
-    return response('Post ' . $id);
-})->where('id', '[0-9]+');
-
-Route::get('/search', function (Request $request) {
-    return $request->name .  ' ' . $request->city;
-});

@@ -26,4 +26,9 @@ class ListingController extends Controller
             abort('404');
         }
     }
+
+    // Show Create Form
+    public function create() {
+        return view('listings.create');
+    }
 }
